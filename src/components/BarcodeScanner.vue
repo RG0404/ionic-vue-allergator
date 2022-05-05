@@ -43,4 +43,7 @@ export default {
 };
 </script>
 <style scoped>
+.scanner-container {
+    transform: rotateY(180deg);
+}
 </style>
