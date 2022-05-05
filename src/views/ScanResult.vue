@@ -16,9 +16,9 @@
                     <p class="product-score ion-text-center">Nutri-score : {{product.nutriscore_grade}}</p>
                 </div>
 
-                <ion-buttons>
-                    <ion-back-button>Retour</ion-back-button>
-                </ion-buttons>
+               
+                <a href="/tabs/tab2">Retour</a>
+                
 
             </div>
 
@@ -129,7 +129,7 @@ ion-content {
     font-size: 22px;
 }
 
-ion-buttons {
+a {
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -140,7 +140,8 @@ ion-buttons {
     background-color: #11823B;
     border-radius: 20px;
     padding: 8px 40px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+    text-decoration: none; 
 }
 
 </style>
