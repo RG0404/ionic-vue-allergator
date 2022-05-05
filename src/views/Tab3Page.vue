@@ -13,7 +13,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonPage, IonHeader,IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonContent } from '@ionic/vue';
+
 
 export default defineComponent({
   name: 'Tab3Page',
