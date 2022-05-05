@@ -4,7 +4,6 @@
       @decode="(a, b, c) => onDecode(a, b, c)"
       @loaded="() => onLoaded()"
     ></StreamBarcodeReader>
-    Input Value: {{ text || "Nothing" }}
   </div>
 </template>
 
@@ -30,7 +29,7 @@ export default {
       console.log(a, b, c);
       this.text = a;
       if (this.text != ""){
-        this.$router.push({path:'/scan-result', params: {id: this.text }});
+        this.$router.push({path:'/scan-result/' + this.text});
       }
       if (this.id) clearTimeout(this.id);
       this.id = setTimeout(() => {
@@ -46,4 +45,7 @@ export default {
 };
 </script>
 <style scoped>
+.scanner-container {
+    transform: rotateY(180deg);
+}
 </style>

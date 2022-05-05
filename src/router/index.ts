@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/LandingPage.vue')
   },
   {
-    path: '/scan-result',
+    path: '/scan-result/:productId',
     name:'ScanResult',
     component: () => import('@/views/ScanResult.vue')
   },
