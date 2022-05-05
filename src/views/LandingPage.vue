@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonIcon, IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent } from '@ionic/vue';
 
 
 export default defineComponent({
