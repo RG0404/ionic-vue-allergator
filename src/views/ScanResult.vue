@@ -17,9 +17,9 @@
                     <p class="product-score ion-text-center">Nutri-score : D</p>
                 </div>
 
-                <ion-buttons>
-                    <ion-back-button>Retour</ion-back-button>
-                </ion-buttons>
+               
+                <a href="/tabs/tab2">Retour</a>
+                
 
             </div>
 
@@ -29,13 +29,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonPage, IonContent, IonButtons } from '@ionic/vue';
+import { IonPage, IonContent } from '@ionic/vue';
 
 
 
 export default defineComponent({
     name: 'ScanResult',
-    components: { IonContent, IonPage, IonButtons }
+    components: { IonContent, IonPage }
 });
 </script>
 
@@ -89,7 +89,7 @@ ion-content {
     font-size: 22px;
 }
 
-ion-buttons {
+a {
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -100,7 +100,8 @@ ion-buttons {
     background-color: #11823B;
     border-radius: 20px;
     padding: 8px 40px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+    text-decoration: none; 
 }
 
 </style>
