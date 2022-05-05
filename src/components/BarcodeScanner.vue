@@ -4,7 +4,6 @@
       @decode="(a, b, c) => onDecode(a, b, c)"
       @loaded="() => onLoaded()"
     ></StreamBarcodeReader>
-    Input Value: {{ text || "Nothing" }}
   </div>
 </template>
 
@@ -29,6 +28,9 @@ export default {
     onDecode(a, b, c) {
       console.log(a, b, c);
       this.text = a;
+      if (this.text != ""){
+        this.$router.push({path:'/scan-result/' + this.text});
+      }
       if (this.id) clearTimeout(this.id);
       this.id = setTimeout(() => {
         if (this.text === a) {

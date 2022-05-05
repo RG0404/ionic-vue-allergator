@@ -5,16 +5,15 @@
             <div class="main-container">
 
                 <h2>Résultat</h2>
+                <p></p>
 
                 <div class="result-container">
-                    <h3 class="product-title">Titre produit</h3>
+                    <h3 class="product-title">{{product.product_name}}</h3>
                     <div class="allergenes-list">
                         <p class="list-title">Allergènes présents dans le produit :</p>
-                        <p>Allergene 1</p>
-                        <p>Allergene 2</p>
-                        <p>Allergene 3</p>
+                        <p>{{ product.allergens }}</p>
                     </div>
-                    <p class="product-score ion-text-center">Nutri-score : D</p>
+                    <p class="product-score ion-text-center">Nutri-score : {{product.nutriscore_grade}}</p>
                 </div>
 
                
@@ -28,14 +27,55 @@
 </template>
 
 <script lang="ts">
+/*ts-ignore*/
 import { defineComponent } from 'vue';
-import { IonPage, IonContent } from '@ionic/vue';
-
+import { IonPage, IonContent, IonButtons } from '@ionic/vue';
+import { useRoute } from 'vue-router';
 
 
 export default defineComponent({
     name: 'ScanResult',
-    components: { IonContent, IonPage }
+    components: { IonContent, IonPage, IonButtons },
+    data(){
+        return {
+            loading: false,
+            error: null,
+            product: "",
+        }
+    },
+    created() {
+        this.$watch(
+            () => this.$route.params,
+            () => {
+                this.fetchData()
+            },
+            {immediate: true}
+        )
+    },
+    methods: {
+        fetchData() {
+            this.loading = true
+            fetch('https://world.openfoodfacts.org/api/v0/product/' + this.$route.params.productId + '.json').then((res)=> res.json()).then((res:any)=>{
+                this.loading = false
+                this.product=res.product
+                console.log(res)
+            }).catch((err)=>{
+                if (err) {
+                    this.error = err.toString()
+                }
+            })
+        }
+    },
+    // async created() {
+    //     const response = await fetch(
+            
+    //     )
+    // },
+    // setup() {
+    //     const route = useRoute();
+    //     this.url = https://world.openfoodfacts.org/api/v0/product/ + productId + .json
+    //     console.log(route.params.productId);
+    // }
 });
 </script>
 
