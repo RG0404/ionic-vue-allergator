@@ -5,6 +5,7 @@
             <div class="main-container">
 
                 <h2>Résultat</h2>
+                <p></p>
 
                 <div class="result-container">
                     <h3 class="product-title">Titre produit</h3>
@@ -25,7 +26,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { IonPage, IonContent } from '@ionic/vue';
-
 
 
 export default defineComponent({

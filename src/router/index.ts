@@ -13,6 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/scan-result',
+    name:'ScanResult',
     component: () => import('@/views/ScanResult.vue')
   },
   {

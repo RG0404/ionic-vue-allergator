@@ -30,7 +30,7 @@ export default {
       console.log(a, b, c);
       this.text = a;
       if (this.text != ""){
-        this.$router.push('ScanResult');
+        this.$router.push({path:'/scan-result', params: {id: this.text }});
       }
       if (this.id) clearTimeout(this.id);
       this.id = setTimeout(() => {
