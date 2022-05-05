@@ -17,7 +17,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue
 
 export default defineComponent({
   name: 'Tab2Page',
-  components: { IonContent, IonPage }
+  components: { IonContent, IonPage, IonHeader }
 });
 </script>
 
