@@ -12,6 +12,10 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/LandingPage.vue')
   },
   {
+    path: '/scan-result',
+    component: () => import('@/views/ScanResult.vue')
+  },
+  {
     path: '/tabs/',
     component: TabsPage,
     children: [

@@ -16,7 +16,7 @@ import { IonPage, IonContent } from '@ionic/vue';
 
 
 export default defineComponent({
-  name: 'TabsPage',
+  name: 'LandingPage',
   components: { IonPage, IonContent },
   setup() {
     return {
