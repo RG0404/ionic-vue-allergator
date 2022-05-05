@@ -2,7 +2,10 @@
   <ion-page>
     <ion-content :fullscreen="true">
       
-      
+      <ion-header>
+        <img src="../../public/assets/logo-allergator.png" alt="Logo Allergator">
+        <h2>Historique</h2>
+      </ion-header>
       
     </ion-content>
   </ion-page>
@@ -17,3 +20,26 @@ export default defineComponent({
   components: { IonContent, IonPage }
 });
 </script>
+
+<style scoped>
+
+ion-header {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+}
+
+ion-header img {
+  width: 60px;
+  margin-left: 20px;
+}
+
+ion-header h2 {
+  font-family: peachy-keen-jf, sans-serif;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+</style>
